@@ -1,3 +1,5 @@
+#Password Generator which returns several different types of passwords and tokens
+
 
 # Generate a 10 character alphanumeric password
 
@@ -10,14 +12,16 @@ password = ''.join(secrets.choice(key) for i in range(10))
 print('10 character alphanumeric password: ' + password)
 
 
-# Generate a 10 character alphanumeric password with at least one lowercase character, at least one uppercase character, and at least three digits
+# Generate a 10 character alphanumeric password with at least one lowercase character, 
+# at least one uppercase character, 
+# and at least three digits
 
 key = string.ascii_letters + string.digits
 while True:
     password = ''.join(secrets.choice(key) for i in range(10))
     if (any(c.islower() for c in password) and any(c.isupper()
     for c in password) and sum(c.isdigit() for c in password) >= 3):
-        print('10 character alphanumeric password with at least one lowercase character, at least one uppercase character, and at least three digits: ' + password)
+        print('10 character alphanumeric password with at least one lowercase character,' + '\n' + 'at least one uppercase character, and at least three digits: ' + password)
         break
 
 
